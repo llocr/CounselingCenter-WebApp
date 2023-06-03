@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com/management/member/model/dao/MemberDAO">
+    <resultMap id="memberResultMap" type="com/management/member/model/dto/MemberDTO">
+        <id property="code" column="MEMBER_CODE"/>
+        <result property="name" column="MEMBER_NAME"/>
+        <result property="birth" column="BIRTH_DATE"/>
+        <result property="gender" column="GENDER"/>
+        <result property="detail" column="DETAIL_INFO"/>
+        <result property="contact" column="CONTACT"/>
+        <result property="teamCode" column="TEAM_CODE"/>
+        <result property="activeStatus" column="ACTIVE_STATUS"/>
+    </resultMap>
+
+    <select id="selectAllMember" resultMap="memberResultMap">
+        SELECT MEMBER_CODE
+                ,MEMBER_NAME
+                ,BIRTH_DATE
+                ,GENDER
+                ,DETAIL_INFO
+                ,CONTACT
+                ,TEAM_CODE
+                ,ACTIVE_STATUS
+        FROM MEMBER_INFO
+    </select>
+
+    <select id="selectTeamMember" parameterType="searchValue" resultMap="memberResultMap">
+        SELECT MEMBER_CODE
+             ,MEMBER_NAME
+             ,BIRTH_DATE
+             ,GENDER
+             ,DETAIL_INFO
+             ,CONTACT
+             ,TEAM_CODE
+             ,ACTIVE_STATUS
+        FROM MEMBER_INFO
+        <where>
+            <if test="teamValue == '상담자'">
+                TEAM_CODE NOT LIKE '1'
+            </if>
+            <if test="teamValue == '내담자'">
+                TEAM_CODE LIKE '1'
+            </if>
+        </where>
+    </select>
+
+    <select id="selectMemberByCode" parameterType="SearchValue" resultMap="memberResultMap">
+        SELECT MEMBER_CODE
+             ,MEMBER_NAME
+             ,BIRTH_DATE
+             ,GENDER
+             ,DETAIL_INFO
+             ,CONTACT
+             ,TEAM_CODE
+             ,ACTIVE_STATUS
+        FROM MEMBER_INFO
+        WHERE MEMBER_CODE = #{ codeValue }
+    </select>
+
+</mapper>

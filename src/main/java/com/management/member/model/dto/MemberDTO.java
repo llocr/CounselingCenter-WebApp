@@ -2,7 +2,7 @@ package com.management.member.model.dto;
 
 public class MemberDTO {
 
-    private String Membercode;
+    private String memberCode;
     private String name;
     private String birthDay;
     private String gender;
@@ -14,8 +14,8 @@ public class MemberDTO {
     public MemberDTO() {
     }
 
-    public MemberDTO(String membercode, String name, String birthDay, String gender, String detail, String contact, String teamCode, String activeStatus) {
-        Membercode = membercode;
+    public MemberDTO(String memberCode, String name, String birthDay, String gender, String detail, String contact, String teamCode, String activeStatus) {
+        this.memberCode = memberCode;
         this.name = name;
         this.birthDay = birthDay;
         this.gender = gender;
@@ -28,7 +28,7 @@ public class MemberDTO {
     @Override
     public String toString() {
         return "MemberDTO{" +
-                "Membercode='" + Membercode + '\'' +
+                "memberCode='" + memberCode + '\'' +
                 ", name='" + name + '\'' +
                 ", birthDay='" + birthDay + '\'' +
                 ", gender='" + gender + '\'' +
@@ -39,8 +39,8 @@ public class MemberDTO {
                 '}';
     }
 
-    public void setMembercode(String membercode) {
-        Membercode = membercode;
+    public void setMemberCode(String memberCode) {
+        this.memberCode = memberCode;
     }
 
     public void setName(String name) {
@@ -71,8 +71,8 @@ public class MemberDTO {
         this.activeStatus = activeStatus;
     }
 
-    public String getMembercode() {
-        return Membercode;
+    public String getMemberCode() {
+        return memberCode;
     }
 
     public String getName() {

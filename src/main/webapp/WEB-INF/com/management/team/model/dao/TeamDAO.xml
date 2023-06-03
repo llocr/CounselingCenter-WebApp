@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.management.team.model.dao.TeamDAO">
+    <resultMap id="teamResultMap" type="com.management.team.model.dto.TeamDTO">
+        <id property="teamCode" column="TEAM_CODE"/>
+        <result property="teamName" column="TEAM_NAME"/>
+        <result property="teamDetail" column="TEAM_DETAIL"/>
+        <result property="useYN" column="USE_YN"/>
+        <result property="gender" column="GENDER"/>
+    </resultMap>
+</mapper>
