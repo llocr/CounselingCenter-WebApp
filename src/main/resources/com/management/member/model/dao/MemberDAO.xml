@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 
-<mapper namespace="com/management/member/model/dao/MemberDAO">
-    <resultMap id="memberResultMap" type="com/management/member/model/dto/MemberDTO">
-        <id property="code" column="MEMBER_CODE"/>
+<mapper namespace="com.management.member.model.dao.MemberDAO">
+    <resultMap id="memberResultMap" type="com.management.member.model.dto.MemberDTO">
+        <id property="memberCode" column="MEMBER_CODE"/>
         <result property="name" column="MEMBER_NAME"/>
-        <result property="birth" column="BIRTH_DATE"/>
+        <result property="birthDay" column="BIRTH_DATE"/>
         <result property="gender" column="GENDER"/>
         <result property="detail" column="DETAIL_INFO"/>
         <result property="contact" column="CONTACT"/>
