@@ -9,7 +9,9 @@ import java.util.List;
 public interface MemberDAO {
     List<MemberDTO> selectAllMember(SqlSession sqlSession);
 
-    List<MemberDTO> selectTeamMember(SqlSession sqlSession, SearchValue teamValue);
+    List<MemberDTO> selectTeamMember(SearchValue teamValue);
 
-    MemberDTO selectMemberByCode(SqlSession sqlSession, SearchValue codeValue);
+    MemberDTO selectMemberByCode(SearchValue codeValue);
+
+    int insertMember(MemberDTO member);
 }

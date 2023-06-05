@@ -24,7 +24,7 @@
     </form>
     <hr>
     <h3>4.신규 회원 정보 등록하기</h3>
-    <form action="member/insert">
+    <form action="${ pageContext.servletContext.contextPath }/member/insert" method="post">
       이름 : <input type="text" name="name"><br>
       생년월일(1999-01-14 형태) : <input type="text" name="birth"><br>
       성별 :
@@ -51,7 +51,7 @@
     </form>
     <hr>
     <h3>5. 기존 회원 정보 수정하기</h3>
-    <form action="member/regist">
+    <form action="member/insert">
       수정할 회원 코드 입력 : <input type="text" name="code"><br>
       <h4>수정할 정보를 입력해주세요</h4>
       이름 : <input type="text" name="name"><br>

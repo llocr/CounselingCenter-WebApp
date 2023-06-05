@@ -25,22 +25,22 @@
         FROM MEMBER_INFO
     </select>
 
-    <select id="selectTeamMember" parameterType="searchValue" resultMap="memberResultMap">
-        SELECT MEMBER_CODE
-             ,MEMBER_NAME
-             ,BIRTH_DATE
-             ,GENDER
-             ,DETAIL_INFO
-             ,CONTACT
-             ,TEAM_CODE
-             ,ACTIVE_STATUS
-        FROM MEMBER_INFO
+    <select id="selectTeamMember" parameterType="SearchValue" resultMap="memberResultMap">
+        SELECT A.MEMBER_CODE
+        , A.MEMBER_NAME
+        , A.BIRTH_DATE
+        , A.GENDER
+        , A.DETAIL_INFO
+        , A.CONTACT
+        , A.TEAM_CODE
+        , A.ACTIVE_STATUS
+        FROM MEMBER_INFO A
         <where>
-            <if test="teamValue == '상담자'">
-                TEAM_CODE NOT LIKE '1'
+            <if test="value == '상담자'">
+                A.TEAM_CODE NOT LIKE '1'
             </if>
-            <if test="teamValue == '내담자'">
-                TEAM_CODE LIKE '1'
+            <if test="value == '내담자'">
+                A.TEAM_CODE LIKE '1'
             </if>
         </where>
     </select>
@@ -55,7 +55,12 @@
              ,TEAM_CODE
              ,ACTIVE_STATUS
         FROM MEMBER_INFO
-        WHERE MEMBER_CODE = #{ codeValue }
+        WHERE MEMBER_CODE = #{ value }
     </select>
+
+    <insert id="insertMember" parameterType="com.management.member.model.dto.MemberDTO">
+        INSERT INTO MEMBER_INFO (MEMBER_NAME, BIRTH_DATE, GENDER, DETAIL_INFO, CONTACT, TEAM_CODE, ACTIVE_STATUS)
+        VALUES (#{name}, #{birthDay}, #{gender}, #{detail}, #{contact}, #{teamCode}, #{activeStatus})
+    </insert>
 
 </mapper>

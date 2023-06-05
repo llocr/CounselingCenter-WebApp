@@ -16,7 +16,10 @@ public class SelectTeamMemberServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String team = request.getParameter("team");
 
-        SearchValue teamValue = new SearchValue(team);
+        SearchValue teamValue = new SearchValue();
+        teamValue.setValue(team);
+
+        System.out.println(teamValue);
 
         MemberService memberService = new MemberService();
         List<MemberDTO> teamMember = memberService.selectTeamMember(teamValue);
@@ -25,7 +28,7 @@ public class SelectTeamMemberServlet extends HttpServlet {
 
         if(teamMember != null) {
             path = "/WEB-INF/view/member/memberList.jsp";
-            request.setAttribute("teamMember", teamMember);
+            request.setAttribute("memberList", teamMember);
         } else {
             path = "/WEB-INF/view/common/errorPage.jsp";
             request.setAttribute("message", "회원 정보 조회 실패");

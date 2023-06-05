@@ -5,7 +5,7 @@
     <title>함께 상담센터</title>
 </head>
 <body>
-    <h1>회원 전체 목록 조회</h1>
+    <h1>회원 목록 조회</h1>
     <table>
         <tr>
             <th>회원 코드</th>
