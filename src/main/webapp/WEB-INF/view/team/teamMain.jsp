@@ -10,7 +10,7 @@
   <hr>
 
   <h3>2. 상담자가 가장 많이 포진한 팀 순서로 조회하기</h3>
-  <button onclick="location.href='${pageContext.servletContext.contextPath}/team/manyList'">순서대로 정보 조회하기</button>
+  <button onclick="location.href='${pageContext.servletContext.contextPath}/team/sortList'">순서대로 정보 조회하기</button>
   <hr>
   <h3>3. 신규 팀 추가히기</h3>
   <form action="team/insert">

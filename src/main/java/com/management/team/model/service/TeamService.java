@@ -22,4 +22,15 @@ public class TeamService {
 
         return teamList;
     }
+
+    public List<TeamDTO> selectSortList() {
+        SqlSession sqlSession = getSqlSession();
+        teamDAO = sqlSession.getMapper(TeamDAO.class);
+
+        List<TeamDTO> teamList = teamDAO.selectSortTeam(sqlSession);
+
+        sqlSession.close();
+
+        return teamList;
+    }
 }

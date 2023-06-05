@@ -17,5 +17,19 @@
         FROM TEAM_INFO
     </select>
 
+    <select id="selectSortTeam" resultMap="teamResultMap">
+        SELECT A.TEAM_CODE
+                , A.TEAM_NAME
+                , A.TEAM_DETAIL
+                , A.USE_YN
+                , COUNT(B.TEAM_CODE)AS TEAM_COUNT
+        FROM TEAM_INFO A
+        LEFT OUTER JOIN MEMBER_INFO B ON A.TEAM_CODE = B.TEAM_CODE
+        WHERE A.TEAM_CODE NOT LIKE '1'
+        GROUP BY A.TEAM_CODE, A.TEAM_NAME
+        HAVING COUNT(B.TEAM_CODE) > 0
+        ORDER BY COUNT(B.TEAM_CODE) DESC
+    </select>
+
 </mapper>
 
