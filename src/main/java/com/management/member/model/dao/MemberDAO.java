@@ -14,4 +14,8 @@ public interface MemberDAO {
     MemberDTO selectMemberByCode(SearchValue codeValue);
 
     int insertMember(MemberDTO member);
+
+    int updateMember(MemberDTO member);
+
+    int deleteMember(SearchValue codeValue);
 }

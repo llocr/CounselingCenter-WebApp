@@ -63,4 +63,37 @@
         VALUES (#{name}, #{birthDay}, #{gender}, #{detail}, #{contact}, #{teamCode}, #{activeStatus})
     </insert>
 
+    <update id="updateMember" parameterType="com.management.member.model.dto.MemberDTO">
+        UPDATE MEMBER_INFO
+        <set>
+            <if test="name != null and name != ''">
+                MEMBER_NAME = #{name}
+            </if>
+            <if test="birthDay != null and birthDay != ''">
+                ,BIRTH_DATE = #{birthDay}
+            </if>
+            <if test="gender != null and gender != 'U'">
+                ,GENDER = #{gender}
+            </if>
+            <if test="detail != null and detail != ''">
+                ,DETAIL_INFO = #{detail}
+            </if>
+            <if test="contact != null and contact != ''">
+                ,CONTACT = #{conatct}
+            </if>
+            <if test="teamCode != null and teamCode != '0'">
+                ,TEAM_CODE = #{teamCode}
+            </if>
+            <if test="activeStatus != null and activeStatus != 'U'">
+                ,ACTIVE_STATUS = #{activeStatus}
+            </if>
+        </set>
+        WHERE MEMBER_CODE = #{memberCode}
+    </update>
+
+    <delete id="deleteMember" parameterType="SearchValue">
+        DELETE FROM MEMBER_INFO
+        WHERE MEMBER_CODE = #{ value }
+    </delete>
+
 </mapper>

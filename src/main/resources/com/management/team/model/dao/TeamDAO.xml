@@ -4,9 +4,18 @@
 <mapper namespace="com.management.team.model.dao.TeamDAO">
     <resultMap id="teamResultMap" type="com.management.team.model.dto.TeamDTO">
         <id property="teamCode" column="TEAM_CODE"/>
-        <result property="teamName" column="TEAM_NAME"/>
-        <result property="teamDetail" column="TEAM_DETAIL"/>
-        <result property="useYN" column="USE_YN"/>
-        <result property="gender" column="GENDER"/>
+        <result property="name" column="TEAM_NAME"/>
+        <result property="detail" column="TEAM_DETAIL"/>
+        <result property="use" column="USE_YN"/>
     </resultMap>
+
+    <select id="selectAllTeam" resultMap="teamResultMap">
+        SELECT TEAM_CODE
+                ,TEAM_NAME
+                ,TEAM_DETAIL
+                ,USE_YN
+        FROM TEAM_INFO
+    </select>
+
 </mapper>
+

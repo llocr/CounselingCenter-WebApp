@@ -52,6 +52,46 @@ public class MemberService {
 
         int result = memberDAO.insertMember(member);
 
+        if(result > 0) {
+            sqlSession.commit();
+        } else {
+            sqlSession.rollback();
+        }
+
+        sqlSession.close();
+
+        return result;
+    }
+
+    public int updateMember(MemberDTO member) {
+        SqlSession sqlSession = getSqlSession();
+        memberDAO = sqlSession.getMapper(MemberDAO.class);
+
+        int result = memberDAO.updateMember(member);
+
+        if(result > 0) {
+            sqlSession.commit();
+        } else {
+            sqlSession.rollback();
+        }
+
+        sqlSession.close();
+
+        return result;
+    }
+
+    public int deleteMember(SearchValue codeValue) {
+        SqlSession sqlSession = getSqlSession();
+        memberDAO = sqlSession.getMapper(MemberDAO.class);
+
+        int result = memberDAO.deleteMember(codeValue);
+
+        if(result > 0) {
+            sqlSession.commit();
+        } else {
+            sqlSession.rollback();
+        }
+
         sqlSession.close();
 
         return result;
