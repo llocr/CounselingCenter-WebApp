@@ -9,7 +9,7 @@ import javax.servlet.http.*;
 import java.io.IOException;
 
 @WebServlet("/member/delete")
-public class DeleteMember extends HttpServlet {
+public class DeleteMemberServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String memberCode = request.getParameter("memberCode");

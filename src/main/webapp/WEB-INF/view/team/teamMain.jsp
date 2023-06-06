@@ -28,19 +28,21 @@
   <hr>
 
   <h3>4. 기존 팀 정보 수정하기</h3>
-  <form action="${ pageContext.servletContext.contextPath }team/regist" method="post">
+  <form action="${ pageContext.servletContext.contextPath }team/update" method="post">
     수정할 팀 코드를 입력해주세요 : <input type="text" name="teamCode"><br>
-    수정할 정보를 입력해주세요
-    팀 이름 : <input type="text" name="teamName"><br>
-    팀 상세 정보 : <input type="text" name="teamDetail"><br>
+    <h4>수정할 정보를 입력해주세요</h4>
+    팀 이름 : <input type="text" name="name"><br>
+    팀 상세 정보 : <input type="text" name="detail"><br>
     팀 사용 여부
-    <select name="useYN">
+    <select name="use">
+      <option value="U">변경 안 함</option>
       <option value="Y">사용 중</option>
       <option value="N">비사용 중</option>
     </select><br>
     <button type="submit">팀 정보 수정하기</button>
   </form>
   <hr>
+
   <h3>5. 기존 팀 정보 삭제하기</h3>
   <form action="team/delete">
     삭제할 팀 코드를 입력해주세요 : <input type="text" name="teamCode"><br>

@@ -36,5 +36,26 @@
         VALUES (#{name}, #{detail}, #{use})
     </insert>
 
+    <update id="updateTeam" parameterType="com.management.team.model.dto.TeamDTO">
+        UPDATE TEAM_INFO
+        <trim prefix="SET" suffixOverrides=",">
+            <if test='name != null and name != ""'>
+                TEAM_NAME = #{name},
+            </if>
+            <if test='detail != null and detail != ""'>
+                TEAM_DETAIL = #{detail},
+            </if>
+            <if test='use != "U"'>
+                USE_YN = #{use},
+            </if>
+        </trim>
+        WHERE TEAM_CODE = #{teamCode}
+    </update>
+
+    <delete id="deleteTeam" parameterType="SearchValue">
+        DELETE FROM TEAM_INFO
+        WHERE TEAM_CODE = #{ value }
+    </delete>
+
 </mapper>
 
