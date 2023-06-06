@@ -41,7 +41,8 @@ public class UpdateMemberServlet extends HttpServlet {
 
         if(result > 0) {
             path = "/WEB-INF/view/common/successPage.jsp";
-            request.setAttribute("message", "기존 회원 정보 수정 성공");
+            request.setAttribute("successCode", "updateMember");
+            request.setAttribute("name", member.getName());
         } else {
             path = "/WEB-INF/view/common/errorPage.jsp";
             request.setAttribute("message", "기존 회원 정보 수정 실패");

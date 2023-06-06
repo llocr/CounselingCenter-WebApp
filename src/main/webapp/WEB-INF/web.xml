@@ -14,4 +14,12 @@
             classpath*:/config/mybatis-config.xml
         </param-value>
     </context-param>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/showErrorPage</location>
+    </error-page>
+    <error-page>
+        <error-code>500</error-code>
+        <location>/showErrorPage</location>
+    </error-page>
 </web-app>

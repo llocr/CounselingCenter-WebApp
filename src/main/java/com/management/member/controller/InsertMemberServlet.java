@@ -39,7 +39,8 @@ public class InsertMemberServlet extends HttpServlet {
         String path = "";
         if(result > 0) {
             path = "/WEB-INF/view/common/successPage.jsp";
-            request.setAttribute("message", "신규회원 등록 성공");
+            request.setAttribute("successCode", "insertMember");
+            request.setAttribute("name", member.getName());
         } else {
             path = "/WEB-INF/view/common/errorPage.jsp";
             request.setAttribute("message", "신규회원 등록 실패");

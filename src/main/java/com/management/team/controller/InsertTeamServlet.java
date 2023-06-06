@@ -32,7 +32,8 @@ public class InsertTeamServlet extends HttpServlet {
 
         if(result > 0) {
             path = "/WEB-INF/view/common/successPage.jsp";
-            request.setAttribute("message", "신규 팀 등록 성공");
+            request.setAttribute("successCode", "insertTeam");
+            request.setAttribute("name", team.getName());
         } else {
             path = "/WEB-INF/view/common/errorPage.jsp";
             request.setAttribute("message", "신규 팀 등록 실패");
