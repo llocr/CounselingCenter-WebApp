@@ -31,5 +31,10 @@
         ORDER BY COUNT(B.TEAM_CODE) DESC
     </select>
 
+    <insert id="insertTeam" parameterType="com.management.team.model.dto.TeamDTO">
+        INSERT INTO TEAM_INFO (TEAM_NAME, TEAM_DETAIL, USE_YN)
+        VALUES (#{name}, #{detail}, #{use})
+    </insert>
+
 </mapper>
 

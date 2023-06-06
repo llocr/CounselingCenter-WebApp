@@ -79,7 +79,7 @@
                 ,DETAIL_INFO = #{detail}
             </if>
             <if test="contact != null and contact != ''">
-                ,CONTACT = #{conatct}
+                ,CONTACT = #{contact}
             </if>
             <if test="teamCode != null and teamCode != '0'">
                 ,TEAM_CODE = #{teamCode}

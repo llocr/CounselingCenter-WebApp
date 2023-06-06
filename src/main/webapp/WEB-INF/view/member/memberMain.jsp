@@ -59,7 +59,7 @@
     <hr>
 
     <h3>5. 기존 회원 정보 수정하기</h3>
-    <form action="member/update" method="post">
+    <form action="${ pageContext.servletContext.contextPath }member/update" method="post">
       수정할 회원 코드 입력 : <input type="text" name="memberCode"><br>
       <h4>수정할 정보를 입력해주세요</h4>
       이름 : <input type="text" name="name"><br>
