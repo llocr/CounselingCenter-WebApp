@@ -29,8 +29,6 @@ public class DeleteMember extends HttpServlet {
             request.setAttribute("message", "기존 회원 삭제 실패");
         }
 
-
-
-
+        request.getRequestDispatcher(path).forward(request, response);
     }
 }
