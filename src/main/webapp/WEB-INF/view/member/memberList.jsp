@@ -25,8 +25,41 @@
                 <td>${ member.gender }</td>
                 <td>${ member.detail }</td>
                 <td>${ member.contact }</td>
-                <td>${ member.teamCode }</td>
-                <td>${ member.activeStatus }</td>
+                <td>
+                    <c:choose>
+                        <c:when test="${ member.teamCode == 1 }">
+                            내담자
+                        </c:when>
+                        <c:when test="${ member.teamCode == 2 }">
+                            아동 상담자
+                        </c:when>
+                        <c:when test="${ member.teamCode == 3 }">
+                            청소년 상담자
+                        </c:when>
+                        <c:when test="${ member.teamCode == 4 }">
+                            노인 상담자
+                        </c:when>
+                        <c:when test="${ member.teamCode == 5 }">
+                            부부 상담자
+                        </c:when>
+                        <c:when test="${ member.teamCode == 6 }">
+                            가족 상담자
+                        </c:when>
+                        <c:when test="${ member.teamCode == 7 }">
+                            죽동 상담자
+                        </c:when>
+                    </c:choose>
+                </td>
+                <td>
+                    <c:choose>
+                        <c:when test="${ member.activeStatus == 'Y' }">
+                            사용 중
+                        </c:when>
+                        <c:when test="${ member.activeStatus == 'N' }">
+                            탈퇴
+                        </c:when>
+                    </c:choose>
+                </td>
             </tr>
         </c:forEach>
     </table>

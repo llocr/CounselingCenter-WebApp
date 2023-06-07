@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>함께 상담센터</title>
@@ -23,8 +24,41 @@
             <td>${ requestScope.member.gender }</td>
             <td>${ requestScope.member.detail }</td>
             <td>${ requestScope.member.contact }</td>
-            <td>${ requestScope.member.teamCode }</td>
-            <td>${ requestScope.member.activeStatus }</td>
+            <td>
+                <c:choose>
+                    <c:when test="${ requestScope.member.teamCode == 1 }">
+                        내담자
+                    </c:when>
+                    <c:when test="${ requestScope.member.teamCode == 2 }">
+                        아동 상담자
+                    </c:when>
+                    <c:when test="${ requestScope.member.teamCode == 3 }">
+                        청소년 상담자
+                    </c:when>
+                    <c:when test="${ requestScope.member.teamCode == 4 }">
+                        노인 상담자
+                    </c:when>
+                    <c:when test="${ requestScope.member.teamCode == 5 }">
+                        부부 상담자
+                    </c:when>
+                    <c:when test="${ requestScope.member.teamCode == 6 }">
+                        가족 상담자
+                    </c:when>
+                    <c:when test="${ requestScope.member.teamCode == 7 }">
+                        죽동 상담자
+                    </c:when>
+                </c:choose>
+            </td>
+            <td>
+                <c:choose>
+                    <c:when test="${ requestScope.member.activeStatus == 'Y' }">
+                        사용 중
+                    </c:when>
+                    <c:when test="${ requestScope.member.activeStatus == 'N' }">
+                        탈퇴
+                    </c:when>
+                </c:choose>
+            </td>
         </tr>
     </table>
 </body>

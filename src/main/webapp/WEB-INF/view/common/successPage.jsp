@@ -18,7 +18,7 @@
     let successCode = "<%= successCode %>";
     switch (successCode) {
         case "insertMember" :
-            message = "신규 회원 정보 등록에 성공하였습니다! :)";
+            message = "신규 회원 정보 등록에 성공하였습니다! :)";료
             option = "등록";
             name = name + "님 ";
             break;
