@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>함께 상담센터</title>
 </head>
 <body>
 <%
@@ -18,7 +18,7 @@
     let successCode = "<%= successCode %>";
     switch (successCode) {
         case "insertMember" :
-            message = "신규 회원 정보 등록에 성공하였습니다! :)";료
+            message = "신규 회원 정보 등록에 성공하였습니다! :)";
             option = "등록";
             name = name + "님 ";
             break;
