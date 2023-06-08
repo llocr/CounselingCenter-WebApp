@@ -35,7 +35,7 @@ public class TeamService {
         return teamList;
     }
 
-    public int insertTeam(TeamDTO team) {
+    public void insertTeam(TeamDTO team) {
         SqlSession sqlSession = getSqlSession();
         teamDAO = sqlSession.getMapper(TeamDAO.class);
 
@@ -48,8 +48,6 @@ public class TeamService {
         }
 
         sqlSession.close();
-
-        return result;
     }
 
     public int updateTeam(TeamDTO team) {

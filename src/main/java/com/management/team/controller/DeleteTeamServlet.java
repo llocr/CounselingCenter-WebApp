@@ -23,7 +23,7 @@ public class DeleteTeamServlet extends HttpServlet {
 
         if(result > 0) {
             path = "/WEB-INF/view/common/successPage.jsp";
-            request.setAttribute("message", "기존 팀 삭제 성공");
+            request.setAttribute("successCode", "deleteTeam");
             request.setAttribute("name", teamCode);
         } else {
             path = "/WEB-INF/view/common/errorPage.jsp";

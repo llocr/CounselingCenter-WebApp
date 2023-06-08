@@ -31,11 +31,6 @@
             option = "삭제";
             name = name + "번 "
             break;
-        case "insertTeam" :
-            message = "신규 팀 정보 등록에 성공하였습니다! :)";
-            option = "등록";
-            name = name + "님 ";
-            break;
         case "updateTeam" :
             message = "기존 팀 정보 수정에 성공하였습니다! :)";
             option = "수정";

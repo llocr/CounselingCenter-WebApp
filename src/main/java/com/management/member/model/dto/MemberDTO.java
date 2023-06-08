@@ -1,6 +1,8 @@
 package com.management.member.model.dto;
 
-public class MemberDTO {
+import java.io.Serializable;
+
+public class MemberDTO implements Serializable {
 
     private String memberCode;
     private String name;
@@ -15,6 +17,7 @@ public class MemberDTO {
     }
 
     public MemberDTO(String memberCode, String name, String birthDay, String gender, String detail, String contact, String teamCode, String activeStatus) {
+        super();
         this.memberCode = memberCode;
         this.name = name;
         this.birthDay = birthDay;

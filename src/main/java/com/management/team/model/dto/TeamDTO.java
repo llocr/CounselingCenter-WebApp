@@ -1,6 +1,8 @@
 package com.management.team.model.dto;
 
-public class TeamDTO {
+import java.io.Serializable;
+
+public class TeamDTO implements Serializable {
     private String teamCode;
     private String name;
     private String detail;
@@ -10,6 +12,7 @@ public class TeamDTO {
     }
 
     public TeamDTO(String teamCode, String name, String detail, String use) {
+        super();
         this.teamCode = teamCode;
         this.name = name;
         this.detail = detail;

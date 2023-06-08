@@ -11,7 +11,7 @@ import java.io.IOException;
 @WebServlet("/team/insert")
 public class InsertTeamServlet extends HttpServlet {
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
 
         String name = request.getParameter("name");
@@ -26,19 +26,6 @@ public class InsertTeamServlet extends HttpServlet {
         team.setDetail(detail);
         team.setUse(use);
 
-        int result = teamService.insertTeam(team);
-
-        String path = "";
-
-        if(result > 0) {
-            path = "/WEB-INF/view/common/successPage.jsp";
-            request.setAttribute("successCode", "insertTeam");
-            request.setAttribute("name", team.getName());
-        } else {
-            path = "/WEB-INF/view/common/errorPage.jsp";
-            request.setAttribute("message", "신규 팀 등록 실패");
-        }
-
-        request.getRequestDispatcher(path).forward(request, response);
+        teamService.insertTeam(team);
     }
 }
